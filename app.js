@@ -17,7 +17,6 @@ var fs = require('fs');
 var db = new tinycache();
 
 var app = express();
-app.set('port', 3000);
 app.use(express.static(__dirname + '/'));
 
 app.use(cookieParser());
@@ -38,7 +37,7 @@ var httpsOptions = {
 //    rejectUnauthorized: true
 
 
-var server = https.createServer(httpsOptions, app).listen(app.get('port'), () => {
-  console.log('server running on port ' + app.get('port'))
+var server = https.createServer(httpsOptions, app).listen((process.env.PORT || 3000), () => {
+  console.log('server running... ')
 })
 
