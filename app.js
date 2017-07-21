@@ -11,7 +11,6 @@ var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser');
 var tinycache = require('tinycache');
 var uuid = require('node-uuid');
-var https = require('https')
 var fs = require('fs');
 
 var db = new tinycache();
@@ -24,20 +23,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
+app.listen((process.env.PORT || 3000), function() {
+  console.log('running... ');
+});
 
-var httpsOptions = {
-	key: fs.readFileSync(__dirname + '/ca/server-key.pem'),
-	cert: fs.readFileSync(__dirname + '/ca/server-crt.pem'),
-    ca: fs.readFileSync(__dirname + '/ca/ca-crt.pem'),
-    requestCert: true,
-    rejectUnauthorized: false
-}
-
-//	crl: fs.readFileSync('./ca/ca-crl.pem'),
-//    rejectUnauthorized: true
-
-
-var server = https.createServer(httpsOptions, app).listen((process.env.PORT || 3000), () => {
-  console.log('server running... ')
-})
 
