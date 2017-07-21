@@ -16,7 +16,7 @@ var fs = require('fs');
 var db = new tinycache();
 
 var app = express();
-app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/public/'));
 
 app.use(cookieParser());
 app.use(bodyParser.json());
