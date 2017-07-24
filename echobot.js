@@ -6,6 +6,11 @@ console.log(req.body);
     text : req.body.text
   };
 
-return res.status(200).json(botPayload);
-
+  // avoid infinite loop
+  var userName = req.body.user_name;
+  if (userName !== 'slackbot') {
+    return res.status(200).json(botPayload);
+  } else {
+    return res.status(200).end();
+  }
 }
