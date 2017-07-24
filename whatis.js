@@ -21,11 +21,10 @@ module.exports = {
 		var subject = command[2];
 		var result = 'sorry, ' + username + ' nothing found for ' + subject;
 
-		if(db.get(whatis) !== null) {
-			result = db.get(whatis);
+		if(db.get(subject) !== null) {
+			result = db.get(subject);
 		}
 		else {
-/*
 			fs.appendFile('whatis.txt', username + " search for " + text, function(error) {
 			if (error) {
 				console.log('Error:- ' + error);
@@ -33,7 +32,6 @@ module.exports = {
 			}
 				console.log("data appended!!");
 			});
-*/
 		}
 		return result;
 	},
