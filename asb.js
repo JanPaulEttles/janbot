@@ -6,13 +6,14 @@ var port = process.env.PORT || 3000;
 
 
 var hellobot = require('./hellobot');
-
+var echobot = require('./echobot');
 
 // body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // test route
 app.get('/', function (req, res) { res.status(200).send('Hello world!') });
+app.get('/echo', echobot);
 
 // error handler
 app.use(function (err, req, res, next) {
