@@ -15,6 +15,11 @@ var fs = require('fs');
 
 var db = new tinycache();
 
+
+/**
+heroku terminate ssl at their loadbalances, so no need to make app ssl aware
+heroku also config the port, so don't specify it
+**/
 var app = express();
 app.use(express.static(__dirname + '/public/'));
 
