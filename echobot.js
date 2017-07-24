@@ -1,5 +1,7 @@
 module.exports = function (req, res, next) {
-  var text = req.body.text;
+  
+console.log(req.body);
+//var text = req.body.text;
   var botPayload = {
     text : req.body.text
   };
