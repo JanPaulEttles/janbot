@@ -2,7 +2,7 @@ var whatis = require('./whatis');
 
 module.exports = function (req, res) {
   
-	var text = req.body.text.split('');
+	var text = req.body.text.split(' ');
 	var category = text[1];
 	var subject = text[2];
 
