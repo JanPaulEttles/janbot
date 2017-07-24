@@ -7,6 +7,7 @@ module.exports = function (req, res) {
 	var subject = text[2];
 
 	var response = '';
+console.log("XXXX"+category+"XXXX");
 	switch(category) {
 		case "whatis":
 				response = whatis(subject);
