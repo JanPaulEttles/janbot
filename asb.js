@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // test route
 app.get('/', function (req, res) { res.status(200).send('Hello world!') });
-app.get('/echo', echobot);
+
 
 // error handler
 app.use(function (err, req, res, next) {
@@ -22,7 +22,7 @@ app.use(function (err, req, res, next) {
 });
 
 app.post('/hello', hellobot);
-
+app.post('/echo', echobot);
 
 app.listen(port, function () {
   console.log('Slack bot listening on port ' + port);
