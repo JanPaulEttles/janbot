@@ -4,7 +4,7 @@ var fs = require('fs');
 
 module.exports = function (req, res) {
   
-	var username = req.body.userName;
+	var username = req.body.user_name;
 	var text = req.body.text;
 
 	var command = text.split(' ');
