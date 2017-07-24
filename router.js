@@ -16,6 +16,7 @@ module.exports = function (req, res) {
 				response = whatis.get(username, text);
 			break;
 		default:
+/*
 				fs.appendFile('category.txt', username + " search for " + text, function(error) {
 					if (error) {
 						console.log('Error:- ' + error);
@@ -23,6 +24,7 @@ module.exports = function (req, res) {
 					}
 					console.log("data appended!!");
 				});
+*/
 			break;
 	}
 
