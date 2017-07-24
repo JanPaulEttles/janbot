@@ -21,6 +21,15 @@ module.exports = {
 		if(db.get(whatis) !== null) {
 			result = db.get(whatis);
 		}
+		else {		
+			fs.appendFile('whatis.txt', req.body.userName + " search for " + req.body.text, function(error) {
+			if (error) {
+				console.log('Error:- ' + error);
+				throw error;
+			}
+				console.log("data appended!!");
+			});
+		}
 		return result;
 	},
 	help: function() {

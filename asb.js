@@ -14,6 +14,13 @@ var hellobot = require('./hellobot');
 var echobot = require('./echobot');
 var router = require('./router');
 
+
+/*
+TJS5ShQTr11ZHpboIouCnXlt
+
+check the token.  if not valid, respond 404
+*/
+
 // body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 

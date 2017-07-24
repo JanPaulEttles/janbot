@@ -1,5 +1,7 @@
 var whatis = require('./whatis');
 
+var fs = require('fs');
+
 module.exports = function (req, res) {
   
 	var text = req.body.text.split(' ');
@@ -7,13 +9,20 @@ module.exports = function (req, res) {
 	var subject = text[2];
 
 	var response = '';
-console.log("XXXX"+category+"XXXX");
+
 	switch(category) {
 		case "whatis":
 				response = whatis.get(subject);
 			break;
 		default:
-				response = 'no category found: ' + req.body.text;
+				response = 'no category found: ' + req.body.text;		 
+				fs.appendFile('category.txt', req.body.userName + " search for " + req.body.text, function(error) {
+				if (error) {
+					console.log('Error:- ' + error);
+					throw error;
+				}
+					console.log("data appended!!");
+				});
 			break;
 	}
 
