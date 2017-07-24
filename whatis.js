@@ -25,6 +25,7 @@ module.exports = {
 			result = db.get(whatis);
 		}
 		else {
+/*
 			fs.appendFile('whatis.txt', username + " search for " + text, function(error) {
 			if (error) {
 				console.log('Error:- ' + error);
@@ -32,6 +33,7 @@ module.exports = {
 			}
 				console.log("data appended!!");
 			});
+*/
 		}
 		return result;
 	},
