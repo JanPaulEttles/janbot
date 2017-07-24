@@ -16,13 +16,16 @@ lineReader.on('line', function (line) {
 
 
 module.exports = {
-	get: function(whatis) {
-		var result = 'nothing found for ' + whatis;
+	get: function(username, text) {
+		var command = text.split(' ');
+		var subject = command[2];
+		var result = 'sorry, ' + username + ' nothing found for ' + subject;
+
 		if(db.get(whatis) !== null) {
 			result = db.get(whatis);
 		}
-		else {		
-			fs.appendFile('whatis.txt', req.body.userName + " search for " + req.body.text, function(error) {
+		else {
+			fs.appendFile('whatis.txt', username + " search for " + text, function(error) {
 			if (error) {
 				console.log('Error:- ' + error);
 				throw error;

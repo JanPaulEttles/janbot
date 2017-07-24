@@ -4,19 +4,21 @@ var fs = require('fs');
 
 module.exports = function (req, res) {
   
-	var text = req.body.text.split(' ');
-	var category = text[1];
-	var subject = text[2];
+	var username = req.body.userName;
+	var text = req.body.text;
 
-	var response = '';
+	var command = text.split(' ');
+	var category = command[1];
+	var subject = command[2];
+
+	var response = = 'sorry, ' + username + ' no category found: ' + text;
 
 	switch(category) {
 		case "whatis":
-				response = whatis.get(subject);
+				response = whatis.get(username, subject, text);
 			break;
 		default:
-				response = 'no category found: ' + req.body.text;		 
-				fs.appendFile('category.txt', req.body.userName + " search for " + req.body.text, function(error) {
+				fs.appendFile('category.txt', username + " search for " + text, function(error) {
 				if (error) {
 					console.log('Error:- ' + error);
 					throw error;
@@ -26,14 +28,12 @@ module.exports = function (req, res) {
 			break;
 	}
 
-	var userName = req.body.user_name;
-
 	var botPayload = {
 		text : response
 	};
 
 	// avoid infinite loop
-	if (userName !== 'slackbot') {
+	if (username !== 'slackbot') {
 		return res.status(200).json(botPayload);
 	} 
 	else {
