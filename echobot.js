@@ -6,6 +6,6 @@ console.log(req.body);
     text : req.body.text
   };
 
-	return res.status(200).end();
+return res.status(200).json(botPayload);
 
 }
