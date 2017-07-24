@@ -10,7 +10,7 @@ module.exports = function (req, res) {
 console.log("XXXX"+category+"XXXX");
 	switch(category) {
 		case "whatis":
-				response = whatis(subject);
+				response = whatis.get(subject);
 			break;
 		default:
 				response = 'no category found: ' + req.body.text;
