@@ -8,7 +8,7 @@ module.exports = function (req, res) {
 
 	var response = '';
 	switch(category) {
-		case: "whatis":
+		case "whatis":
 				response = whatis(subject);
 			break;
 		default:
