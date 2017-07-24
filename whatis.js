@@ -19,7 +19,7 @@ module.exports = {
 	get: function(username, text) {
 		var command = text.split(' ');
 		var subject = command[2];
-		var result = 'sorry, ' + username + ' nothing found for ' + subject;
+		var result = 'sorry, ' + username + ' nothing found: ' + text;
 
 		if(db.get(subject) !== null) {
 			result = db.get(subject);

@@ -16,7 +16,11 @@ var router = require('./router');
 
 
 /*
+curl -X POST --data "text=asktheexpert whatis poop" https://appsecexpert.herokuapp.com/router
+
+
 TJS5ShQTr11ZHpboIouCnXlt
+
 
 check the token.  if not valid, respond 404
 */
