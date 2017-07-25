@@ -22,9 +22,8 @@ module.exports = {
 		var response = 'sorry, ' + username + ' no category found. \n@jan, please add content for: ' + text;
 
 		if(db.get(subject) !== null) {
-			result = db.get(subject);
+			response = db.get(subject);
 		}
-		return result;
 	},
 	help: function() {
 		// whatever

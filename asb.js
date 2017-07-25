@@ -1,4 +1,10 @@
 /*
+
+curl -X POST --data "text=asktheexpert whatis poop" https://appsecexpert.herokuapp.com/router
+
+
+
+
     ,,,
    (. .)
 ooO-(_)-Ooo
