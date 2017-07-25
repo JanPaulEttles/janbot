@@ -1,7 +1,10 @@
 'use strict';
 
-var tinycache = require('tinycache');
-var db = new tinycache();
+//var tinycache = require('tinycache');
+//var db = new tinycache();
+var midget = require('./midget');
+var db = new midget();
+
 var fs = require('fs');
 
 var lineReader = require('readline').createInterface({
@@ -21,6 +24,17 @@ module.exports = {
 		var subject = command[2];
 		var response = 'sorry, ' + username + ' no results found for ' + subject + '. \n@jan, please add content for: ' + text;
 
+
+		if(subject !== null || subject === 'all') {
+
+			var keys = db.keys();					
+
+			keys.forEach(function(key, index) {
+			  response += key + ' ' + db.get(key);
+			});
+
+		}
+		else 
 		if(db.get(subject) !== null) {
 			response = db.get(subject);
 		}
