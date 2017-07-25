@@ -3,6 +3,7 @@ var videos = require('./videos');
 var books = require('./books');
 var tools = require('./tools');
 var confs = require('./confs');
+var help = require('./help');
 
 var fs = require('fs');
 
@@ -30,6 +31,9 @@ module.exports = function (req, res) {
 			break;
 		case "confs":
 				response = confs.get(username, text);
+			break;
+		case "help":
+				response = help.help();
 			break;
 		default:
 /*
