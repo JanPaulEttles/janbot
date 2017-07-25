@@ -13,7 +13,7 @@ module.exports = function (req, res) {
 
 	var command = text.split(' ');
 	var category = command[1];
-	var response = 'sorry, ' + username + ' no category found. \n@jan, please add content for: ' + text;
+	var response = 'sorry, ' + username + ' no category:' + category + ', found. \n@jan, please add content for: ' + text;
 
 	switch(category) {
 		case "whatis":

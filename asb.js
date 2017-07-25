@@ -1,10 +1,10 @@
 /*
 
-curl -X POST --data "text=asktheexpert whatis poop" https://appsecexpert.herokuapp.com/router
-
-
-
-
+curl -X POST --data "user_name=jan&text=asktheexpert whatis xss" https://appsecexpert.herokuapp.com/router
+curl -X POST --data "user_name=jan&text=asktheexpert videos sqli" https://appsecexpert.herokuapp.com/router
+curl -X POST --data "user_name=jan&text=asktheexpert books wahh" https://appsecexpert.herokuapp.com/router
+curl -X POST --data "user_name=jan&text=asktheexpert tools burp" https://appsecexpert.herokuapp.com/router
+curl -X POST --data "user_name=jan&text=asktheexpert confs sans" https://appsecexpert.herokuapp.com/router
     ,,,
    (. .)
 ooO-(_)-Ooo
@@ -22,12 +22,7 @@ var router = require('./router');
 
 
 /*
-curl -X POST --data "text=asktheexpert whatis poop" https://appsecexpert.herokuapp.com/router
-
-
 TJS5ShQTr11ZHpboIouCnXlt
-
-
 check the token.  if not valid, respond 404
 */
 
