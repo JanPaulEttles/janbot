@@ -1,0 +1,2 @@
+xss	https://www.cybrary.it/0p3n/video-tutorial-xss-cross-site-scripting/
+sqli	https://www.cybrary.it/video/sql-injection-intro/

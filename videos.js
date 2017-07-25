@@ -5,7 +5,7 @@ var db = new tinycache();
 var fs = require('fs');
 
 var lineReader = require('readline').createInterface({
-	input: require('fs').createReadStream('whatis.txt')
+	input: require('fs').createReadStream('videos.txt')
 });
 
 lineReader.on('line', function (line) {
@@ -23,6 +23,17 @@ module.exports = {
 
 		if(db.get(subject) !== null) {
 			result = db.get(subject);
+		}
+		else {
+/*
+			fs.appendFile('vidoes.txt', username + " search for " + text, function(error) {
+			if (error) {
+				console.log('Error:- ' + error);
+				throw error;
+			}
+				console.log("data appended!!");
+			});
+*/
 		}
 		return result;
 	},

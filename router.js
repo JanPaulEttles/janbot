@@ -1,4 +1,8 @@
 var whatis = require('./whatis');
+var videos = require('./videos');
+var books = require('./books');
+var tools = require('./tools');
+var confs = require('./confs');
 
 var fs = require('fs');
 
@@ -9,11 +13,23 @@ module.exports = function (req, res) {
 
 	var command = text.split(' ');
 	var category = command[1];
-	var response = 'sorry, ' + username + ' no category found: ' + text;
+	var response = 'sorry, ' + username + ' no category found. \n@jan, please add content for: ' + text;
 
 	switch(category) {
 		case "whatis":
 				response = whatis.get(username, text);
+			break;
+		case "videos":
+				response = videos.get(username, text);
+			break;
+		case "books":
+				response = books.get(username, text);
+			break;
+		case "tools":
+				response = tools.get(username, text);
+			break;
+		case "confs":
+				response = confs.get(username, text);
 			break;
 		default:
 /*

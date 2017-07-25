@@ -5,7 +5,7 @@ var db = new tinycache();
 var fs = require('fs');
 
 var lineReader = require('readline').createInterface({
-	input: require('fs').createReadStream('whatis.txt')
+	input: require('fs').createReadStream('tools.txt')
 });
 
 lineReader.on('line', function (line) {
