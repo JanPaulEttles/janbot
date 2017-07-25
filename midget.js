@@ -27,7 +27,7 @@ midget.prototype = {
 		var keys = [];
 		for(var k in this._cache) keys.push(k);
         return keys;
-    }
+    },
     get misses() {
         return this._misses;
     }
