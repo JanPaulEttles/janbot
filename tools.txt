@@ -1,2 +1,4 @@
 burp	https://portswigger.net/burp/
 zap	http://www.zaproxy.org/
+sqlmap	http://sqlmap.org/
+kali https://www.kali.org/

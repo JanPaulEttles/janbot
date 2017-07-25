@@ -5,6 +5,9 @@ curl -X POST --data "user_name=jan&text=asktheexpert videos sqli" https://appsec
 curl -X POST --data "user_name=jan&text=asktheexpert books wahh" https://appsecexpert.herokuapp.com/router
 curl -X POST --data "user_name=jan&text=asktheexpert tools burp" https://appsecexpert.herokuapp.com/router
 curl -X POST --data "user_name=jan&text=asktheexpert confs sans" https://appsecexpert.herokuapp.com/router
+
+curl -X POST --data "user_name=jan&text=asktheexpert books all" https://appsecexpert.herokuapp.com/router
+
     ,,,
    (. .)
 ooO-(_)-Ooo
@@ -14,7 +17,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var app = express();
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3001;
 
 var hellobot = require('./hellobot');
 var echobot = require('./echobot');

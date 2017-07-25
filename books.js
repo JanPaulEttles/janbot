@@ -1,7 +1,5 @@
 'use strict';
 
-//var tinycache = require('tinycache');
-//var db = new tinycache();
 var midget = require('./midget');
 var db = new midget();
 
@@ -17,20 +15,18 @@ lineReader.on('line', function (line) {
 	db.put(values[0], values[1]);
 });
 
-
 module.exports = {
 	get: function(username, text) {
 		var command = text.split(' ');
 		var subject = command[2];
 		var response = 'sorry, ' + username + ' no results found for ' + subject + '. \n@jan, please add content for: ' + text;
 
-
 		if(subject !== null || subject === 'all') {
+			response = 'all books:\n';
 
-			var keys = db.keys();					
-
+			var keys = db.keys;					
 			keys.forEach(function(key, index) {
-			  response += key + ' ' + db.get(key);
+			  response += key + ' ' + db.get(key) + '\n';
 			});
 
 		}

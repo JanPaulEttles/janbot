@@ -18,7 +18,7 @@ midget.prototype = {
         return this._size;
     },
     get memsize() {
-        return sizeof( this._cache ); /* Returns the approximate memory usage of all objects stored in the cache and cache overhead */
+        return sizeof( this._cache );
     },
     get hits() {
         return this._hits;
