@@ -1,7 +1,7 @@
 'use strict';
 
-var tinycache = require('tinycache');
-var db = new tinycache();
+var midget = require('./midget');
+var db = new midget();
 var fs = require('fs');
 
 var lineReader = require('readline').createInterface({

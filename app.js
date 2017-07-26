@@ -1,20 +1,16 @@
 /*
-npm install express
-npm install body-parser
-npm install cookie-parser
-npm install tinycache
-npm install node-uuid
+npm install express --save
+npm install body-parser --save
+npm install cookie-parser --save
+npm install js-sizeof --save
+npm install node-uuid --save
 */
 
 var express = require('express');
 var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser');
-var tinycache = require('tinycache');
 var uuid = require('node-uuid');
 var fs = require('fs');
-
-var db = new tinycache();
-
 
 /**
 heroku terminate ssl at their loadbalances, so no need to make app ssl aware
@@ -29,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.listen((process.env.PORT || 3000), function() {
-  console.log('running... ');
+	console.log('running... ');
 });
 
 

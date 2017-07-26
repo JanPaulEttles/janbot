@@ -13,6 +13,16 @@ curl -X POST --data "user_name=jan&text=asktheexpert books all" https://appsecex
 ooO-(_)-Ooo
 wot no .....
 */
+
+/*
+npm install express --save
+npm install body-parser --save
+npm install cookie-parser --save
+npm install js-sizeof --save
+npm install node-uuid --save
+*/
+
+
 var express = require('express');
 var bodyParser = require('body-parser');
 

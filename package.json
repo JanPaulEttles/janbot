@@ -24,6 +24,7 @@
     "express": "^4.15.3",
     "fs": "0.0.1-security",
     "https": "^1.0.0",
+    "js-sizeof": "0.0.1",
     "node-uuid": "^1.4.8",
     "tinycache": "^1.1.0"
   }

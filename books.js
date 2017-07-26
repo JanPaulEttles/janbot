@@ -37,7 +37,7 @@ module.exports = {
 		return response;
 	},
 	help: function() {
-		// whatever
+		return 'usage: trigger whatis subject';
 	}
 };
 

@@ -93,18 +93,4 @@ midget.prototype.get = function( key ) {
     return self._cache[ key ];
 };
 
-midget.shared = new midget();
-
-if ( typeof module !== 'undefined' && module.exports ) {
-    module.exports = midget;
-}
-else if ( typeof define === 'function' && define.amd ) {
-    /* global define */
-    define( [], function() {
-        return midget;
-    } );
-}
-else {
-    /* global window */
-    window.midget = midget;
-}
+module.exports = midget;
