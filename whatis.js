@@ -23,12 +23,13 @@ module.exports = {
 
 		if(subject !== null || subject === 'all') {
 			response = 'all whatis:\n';
-
+			return response += db.keys;
+/*
 			var keys = db.keys;					
 			keys.forEach(function(key, index) {
 			  response += key + ' ' + db.get(key) + '\n';
 			});
-
+*/
 		}
 		else 
 		if(db.get(subject) !== null) {
